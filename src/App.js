@@ -10,11 +10,10 @@ function App() {
   const [term, setTerm] = useState('chicken')
   const [emptyTerm, setEmptyTerm] = useState(false)
   const [diet, setDiet] = useState('')
-  const [health, setHealth] = useState('')
 
   const getRecipes = async () => {
     const res = await axios.get(
-      `${BASE_URL}&q=${term}&app_id=${APP_ID}&app_key=${APP_KEY}${diet.length > 0 ?  `&diet=${diet}` : ''}${health.length > 0 ?  `&health=${health}` : ''}`
+      `${BASE_URL}&q=${term}&app_id=${APP_ID}&app_key=${APP_KEY}${diet.length > 0 ?  `&diet=${diet}` : ''}`
     )
     console.log(res.data)
     setRecipes(res.data.hits.map(r => r.recipe))
@@ -30,10 +29,6 @@ function App() {
 
   const handleDietChange = (event) => {
     setDiet(event.target.value)
-  }
-
-  const handleHealthChange = (event) => {
-    setHealth(event.target.value)
   }
 
   const handleSearch = (event) => {
@@ -64,13 +59,6 @@ function App() {
           <option value="low-fat">Low Fat</option>
           <option value="low-sodium">Low Sodium</option>
           <option value="balanced">Balanced</option>
-        </select>
-        <select value={health} onChange={handleHealthChange}>
-          <option value="">All</option>
-          <option value="gluten-free">Gluten-Free</option>
-          <option value="dairy-free">Dairy-Free</option>
-          <option value="keto-friendly">Keto Friendly</option>
-          <option value="paleo">Paleo</option>
         </select>
         <input type="submit" value="Search" />
       </form>
