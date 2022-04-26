@@ -14,6 +14,9 @@ const Recipe = ({recipe}) => {
       <h2>{recipe.label}</h2>
       <button onClick={toggleIngredients}>{ showIngredients ? 'Hide Ingredients' : 'Show Ingredients'}</button>
       { showIngredients ? <Ingredients ingredients={recipe.ingredients} /> : '' }
+      <div>
+        <a href={recipe.url} target="_blank" rel="noreferrer">View full recipe</a>
+      </div>
     </div>
   )
 }
