@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { BASE_URL, APP_ID, APP_KEY } from './globals';
+import RecipeList from './components/RecipeList';
 import './App.css';
 
 function App() {
+
+  const [recipes, setRecipes] = useState([])
+  const [term, setTerm] = useState('chicken')
+
+  useEffect(() => {
+    const getRecipes = async () => {
+      const res = await axios.get(
+        `${BASE_URL}&q=${term}&app_id=${APP_ID}&app_key=${APP_KEY}&diet=high-protein`
+      )
+      console.log(res.data)
+      setRecipes(res.data.hits.map(r => r.recipe))
+    }
+    getRecipes()
+  }, [term])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <header>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Recipe Finder
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <div>Search bar</div>
+      <RecipeList recipes={recipes} />
     </div>
   );
 }
