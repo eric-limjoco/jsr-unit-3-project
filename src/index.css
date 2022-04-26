@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(223, 234, 224);
 }
 
 code {
@@ -50,6 +51,7 @@ form select {
 }
 
 .recipe img {
+  border-radius: 2%;
   margin-bottom: 0.6rem;
   width: 100%;
 }
