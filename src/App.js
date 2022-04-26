@@ -45,22 +45,29 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Recipe Search</h1>
+        <h1 className="app-title">Recipe Search</h1>
         <div id="edamam-badge" datacolor="white"></div>
       </header>
-      <div>Search for a recipe</div>
       <form onSubmit={handleSearch} className="search">
-        <input type="text" value={term} onChange={handleTermChange} />
-        <select value={diet} onChange={handleDietChange}>
+        <div>
+          <label>Search Term</label>
+          <input type="text" value={term} onChange={handleTermChange} />
+        </div>
+        <div>
+        <label>Diet</label>
+          <select value={diet} onChange={handleDietChange}>
             <option value="">All</option>
-          <option value="high-protein">High-Protein</option>
-          <option value="high-fiber">High-Fiber</option>
-          <option value="low-carb">Low-Carb</option>
-          <option value="low-fat">Low-Fat</option>
-          <option value="low-sodium">Low-Sodium</option>
-          <option value="balanced">Balanced</option>
-        </select>
-        <input type="submit" value="Search" />
+            <option value="high-protein">High-Protein</option>
+            <option value="high-fiber">High-Fiber</option>
+            <option value="low-carb">Low-Carb</option>
+            <option value="low-fat">Low-Fat</option>
+            <option value="low-sodium">Low-Sodium</option>
+            <option value="balanced">Balanced</option>
+          </select>
+        </div>
+        <div>
+          <input type="submit" value="Search" />
+        </div>
       </form>
       {emptyTerm ? <div>Please enter a search term</div> : ''}
       <RecipeList recipes={recipes} />
