@@ -35,6 +35,19 @@ code {
   width: 100%;
 }
 
+.diet-label-container {
+  display: flex;
+}
+
+.diet-label {
+  background-color: rgb(68, 68, 186);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.8rem;
+  margin: 0 0.2rem 0.4rem 0;
+  padding: 0.3rem 0.4rem;
+}
+
 .ingredients-list {
   list-style: none;
 }

@@ -53,8 +53,8 @@ function App() {
         <h1>Recipe Search</h1>
         <div id="edamam-badge" datacolor="white"></div>
       </header>
+      <div>Search for a recipe</div>
       <form onSubmit={handleSearch} className="search">
-        <label>Search for a recipe</label>
         <input type="text" value={term} onChange={handleTermChange} />
         <select value={diet} onChange={handleDietChange}>
             <option value="">All</option>

@@ -12,10 +12,10 @@ const Recipe = ({recipe}) => {
     <div key={recipe.calories.toString()} className="recipe">
       <img src={recipe.image} alt="food" />
       <h2>{recipe.label}</h2>
-      <div className="diet-labels">
+      <div className="diet-label-container">
       {
         recipe.dietLabels.map((d, i) => (
-          <span key={i}>{d}</span>
+          <span key={i} className="diet-label">{d}</span>
         ))
       }
       </div>
