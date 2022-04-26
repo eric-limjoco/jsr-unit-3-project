@@ -43,7 +43,8 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Recipe Finder</h1>
+        <h1>Recipe Search</h1>
+        <div id="edamam-badge" datacolor="white"></div>
       </header>
       <form onSubmit={handleSearch} className="search">
         <label>Search for a recipe</label>
