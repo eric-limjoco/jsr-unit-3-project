@@ -15,7 +15,7 @@ const Recipe = ({recipe}) => {
       <div className="diet-label-container">
       {
         recipe.dietLabels.map((d, i) => (
-          <span key={i} className="diet-label">{d}</span>
+          <span key={i} className={`diet-label ${d}`}>{d}</span>
         ))
       }
       </div>

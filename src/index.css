@@ -48,6 +48,30 @@ code {
   padding: 0.3rem 0.4rem;
 }
 
+.High-Protein {
+  background-color: red;
+}
+
+.High-Fiber {
+  background-color: orange;
+}
+
+.Low-Carb {
+  background-color: yellow;
+}
+
+.Low-Fat {
+  background-color: green;
+}
+
+.Low-Sodium {
+  background-color: blue;
+}
+
+.Balanced {
+  background-color: purple;
+}
+
 .ingredients-list {
   list-style: none;
 }
