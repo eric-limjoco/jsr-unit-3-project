@@ -8,6 +8,7 @@ function App() {
 
   const [recipes, setRecipes] = useState([])
   const [term, setTerm] = useState('chicken')
+  const [emptyTerm, setEmptyTerm] = useState(false)
   const [diet, setDiet] = useState('')
   const [health, setHealth] = useState('')
 
@@ -37,7 +38,13 @@ function App() {
 
   const handleSearch = (event) => {
     event.preventDefault()
-    getRecipes()
+    if (term.length === 0) {
+      setRecipes([])
+      setEmptyTerm(true)
+    } else {
+      setEmptyTerm(false)
+      getRecipes()
+    }
   }
 
   return (
@@ -67,6 +74,7 @@ function App() {
         </select>
         <input type="submit" value="Search" />
       </form>
+      {emptyTerm ? <div>Please enter a search term</div> : ''}
       <RecipeList recipes={recipes} />
     </div>
   );
