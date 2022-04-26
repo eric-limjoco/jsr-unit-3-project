@@ -24,7 +24,10 @@ function App() {
       <header>
         <h1>Recipe Finder</h1>
       </header>
-      <h2>Search bar</h2>
+      <div className="search">
+        <input type="text" defaultValue={term} />
+        <button>Search</button>
+      </div> 
       <RecipeList recipes={recipes} />
     </div>
   );

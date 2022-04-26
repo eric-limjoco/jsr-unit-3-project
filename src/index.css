@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.search {
+  margin-bottom: 2rem;
+}
+
 .recipe-grid {
   display: flex;
   justify-content: space-between;
