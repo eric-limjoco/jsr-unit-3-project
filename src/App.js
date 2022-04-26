@@ -7,7 +7,7 @@ import './App.css';
 function App() {
 
   const [recipes, setRecipes] = useState([])
-  const [term, setTerm] = useState('chicken')
+  const [term, setTerm] = useState('Chicken')
   const [emptyTerm, setEmptyTerm] = useState(false)
   const [diet, setDiet] = useState('')
 

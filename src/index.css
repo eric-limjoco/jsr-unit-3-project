@@ -32,6 +32,7 @@ code {
 }
 
 .recipe img {
+  margin-bottom: 0.6rem;
   width: 100%;
 }
 
@@ -43,35 +44,54 @@ code {
   background-color: rgb(68, 68, 186);
   border-radius: 6px;
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin: 0 0.2rem 0.4rem 0;
   padding: 0.3rem 0.4rem;
 }
 
 .High-Protein {
-  background-color: red;
+  background-color: rgb(205, 71, 71);
 }
 
 .High-Fiber {
-  background-color: orange;
+  background-color: rgb(207, 155, 60);
 }
 
 .Low-Carb {
-  background-color: yellow;
+  background-color: rgb(186, 186, 49);
 }
 
 .Low-Fat {
-  background-color: green;
+  background-color: rgb(79, 157, 79);
 }
 
 .Low-Sodium {
-  background-color: blue;
+  background-color: rgb(71, 71, 168);
 }
 
 .Balanced {
-  background-color: purple;
+  background-color: rgb(145, 60, 145);
+}
+
+.recipe-label {
+  margin: 0;
+}
+
+.recipe-link {
+  margin-bottom: 1rem;
+}
+
+.recipe-link a {
+  font-size: 0.9rem;
 }
 
 .ingredients-list {
-  list-style: none;
+  margin-left: 1rem;
+  padding: 0.2rem;
+}
+
+.ingredient {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
 }
