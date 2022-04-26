@@ -9,10 +9,11 @@ function App() {
   const [recipes, setRecipes] = useState([])
   const [term, setTerm] = useState('chicken')
   const [diet, setDiet] = useState('')
+  const [health, setHealth] = useState('')
 
   const getRecipes = async () => {
     const res = await axios.get(
-      `${BASE_URL}&q=${term}&app_id=${APP_ID}&app_key=${APP_KEY}${diet.length > 0 ?  `&diet=${diet}` : ''}`
+      `${BASE_URL}&q=${term}&app_id=${APP_ID}&app_key=${APP_KEY}${diet.length > 0 ?  `&diet=${diet}` : ''}${health.length > 0 ?  `&health=${health}` : ''}`
     )
     console.log(res.data)
     setRecipes(res.data.hits.map(r => r.recipe))
@@ -30,6 +31,10 @@ function App() {
     setDiet(event.target.value)
   }
 
+  const handleHealthChange = (event) => {
+    setHealth(event.target.value)
+  }
+
   const handleSearch = (event) => {
     event.preventDefault()
     getRecipes()
@@ -45,13 +50,20 @@ function App() {
         <input type="text" value={term} onChange={handleTermChange} />
         <select value={diet} onChange={handleDietChange}>
             <option value="">All</option>
-            <option value="high-protein">High Protein</option>
-            <option value="high-fiber">High Fiber</option>
-            <option value="low-carb">Low Carb</option>
-            <option value="low-fat">Low Fat</option>
-            <option value="low-sodium">Low Sodium</option>
-            <option value="balanced">Balanced</option>
-          </select>
+          <option value="high-protein">High Protein</option>
+          <option value="high-fiber">High Fiber</option>
+          <option value="low-carb">Low Carb</option>
+          <option value="low-fat">Low Fat</option>
+          <option value="low-sodium">Low Sodium</option>
+          <option value="balanced">Balanced</option>
+        </select>
+        <select value={health} onChange={handleHealthChange}>
+          <option value="">All</option>
+          <option value="gluten-free">Gluten-Free</option>
+          <option value="dairy-free">Dairy-Free</option>
+          <option value="keto-friendly">Keto Friendly</option>
+          <option value="paleo">Paleo</option>
+        </select>
         <input type="submit" value="Search" />
       </form>
       <RecipeList recipes={recipes} />
