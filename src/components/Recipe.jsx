@@ -12,7 +12,11 @@ const Recipe = ({recipe}) => {
     <div key={recipe.calories.toString()} className="recipe">
       <img src={recipe.image} alt="food" />
       <h2>{recipe.label}</h2>
-      {recipe.dietLabels.map(d => (<span>{d}</span>))}
+      {
+        recipe.dietLabels.map((d, i) => (
+          <span key={i}>{d}</span>
+        ))
+      }
       <button onClick={toggleIngredients}>{ showIngredients ? 'Hide Ingredients' : 'Show Ingredients'}</button>
       { showIngredients ? <Ingredients ingredients={recipe.ingredients} /> : '' }
       <div>
