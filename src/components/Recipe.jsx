@@ -12,12 +12,16 @@ const Recipe = ({recipe}) => {
     <div key={recipe.calories.toString()} className="recipe">
       <img src={recipe.image} alt="food" />
       <h2>{recipe.label}</h2>
+      <div className="diet-labels">
       {
         recipe.dietLabels.map((d, i) => (
           <span key={i}>{d}</span>
         ))
       }
-      <button onClick={toggleIngredients}>{ showIngredients ? 'Hide Ingredients' : 'Show Ingredients'}</button>
+      </div>
+      <div>
+        <button onClick={toggleIngredients}>{ showIngredients ? 'Hide Ingredients' : 'Show Ingredients'}</button>
+      </div>
       { showIngredients ? <Ingredients ingredients={recipe.ingredients} /> : '' }
       <div>
         <a href={recipe.url} target="_blank" rel="noreferrer">View full recipe</a>
