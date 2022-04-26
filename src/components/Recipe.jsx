@@ -23,7 +23,7 @@ const Recipe = ({recipe}) => {
         <a href={recipe.url} target="_blank" rel="noreferrer">View full recipe</a>
       </div>
       <div>
-        <button onClick={toggleIngredients}>{ showIngredients ? 'Hide Ingredients' : 'Show Ingredients'}</button>
+        <button className="toggle-ingredients" onClick={toggleIngredients}>{ showIngredients ? 'Hide Ingredients' : 'Show Ingredients'}</button>
       </div>
       { showIngredients ? <Ingredients ingredients={recipe.ingredients} /> : '' }
     </div>
