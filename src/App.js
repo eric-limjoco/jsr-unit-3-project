@@ -22,11 +22,9 @@ function App() {
   return (
     <div className="App">
       <header>
-        <p>
-          Recipe Finder
-        </p>
+        <h1>Recipe Finder</h1>
       </header>
-      <div>Search bar</div>
+      <h2>Search bar</h2>
       <RecipeList recipes={recipes} />
     </div>
   );
