@@ -49,12 +49,12 @@ function App() {
         <div id="edamam-badge" datacolor="white"></div>
       </header>
       <form onSubmit={handleSearch} className="search">
-        <div>
-          <label>Search Term</label>
+        <div className="search-element">
+          <label>Search Term (*)</label>
           <input type="text" value={term} onChange={handleTermChange} />
         </div>
-        <div>
-        <label>Diet</label>
+        <div className="search-element">
+          <label>Diet</label>
           <select value={diet} onChange={handleDietChange}>
             <option value="">All</option>
             <option value="high-protein">High-Protein</option>
@@ -65,7 +65,8 @@ function App() {
             <option value="balanced">Balanced</option>
           </select>
         </div>
-        <div>
+        <div className="search-element">
+          <label>&nbsp;</label>
           <input type="submit" value="Search" />
         </div>
       </form>

@@ -24,16 +24,36 @@ code {
 }
 
 .search {
-  margin-bottom: 2rem;
+  display: flex;
+  margin: 0 auto 2rem;
+  width: 600px;
 }
 
-form label {
-  margin-right: 0;
+.search-element {
+  text-align: left;
+  width: 30%;
 }
 
-form input,
-form select {
-  margin-left: 2rem;
+.search-element label {
+  color: rgb(69, 69, 69);
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.search-element input,
+.search-element select {
+  background-color: rgb(222, 221, 221);
+  border: 1px solid rgb(164, 164, 164);
+  border-radius: 6px;
+  font-size: 1rem;
+  padding: 0.4rem 0.4rem;
+  width: 90%;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
 }
 
 .recipe-grid {
